@@ -45,8 +45,8 @@ ___
 まず以下のようなコマンドを実行してください。
 
 ```
-$ git clone https://github.com/Dansato1203/Robosys2020_devicedriver  
-$ cd Robosys2020_devicedriver/myled  
+$ git clonehttps://github.com/RyotaHama07/robotsystem2021_devicedriver 
+$ cd   
 $ make  
 $ sudo insmod myled.ko  
 $ sudo chmod 666 /dev/myled0  
