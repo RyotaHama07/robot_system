@@ -46,7 +46,7 @@ ___
 
 ```
 $ git clonehttps://github.com/RyotaHama07/robotsystem2021_devicedriver 
-$ cd   
+$ cd robotsystem2021_devicedriver/myled/myled.c
 $ make  
 $ sudo insmod myled.ko  
 $ sudo chmod 666 /dev/myled0  
