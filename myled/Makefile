@@ -1,5 +1,4 @@
 
-
 obj-m :=myled.o
 
 myled.ko: myled.c
