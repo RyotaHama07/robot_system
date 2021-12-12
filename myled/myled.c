@@ -129,7 +129,11 @@ static ssize_t led_write(struct file*filp, const char*buf, size_t count, loff_t*
                 gpio_base[10] = 1 << 25;
                 msleep(200);
                 gpio_base[7] = 1 << 25;
-                ssleep(1);
+                msleep(200);
+                gpio_base[10] = 1 << 25;
+                msleep(200);
+                gpio_base[7] = 1 << 25;
+                msleep(200);
                 gpio_base[10] = 1 << 25;
 
 
@@ -204,4 +208,4 @@ static void __exit cleanup_mod(void)
                  printk(KERN_INFO "%s is unloaded. major:%d\n",__FILE__,MAJOR(dev));
 }
 module_init(init_mod);
-module_exit(cleanup_mod);                                                                                                                                         1,1          先頭
+module_exit(cleanup_mod);
