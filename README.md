@@ -46,7 +46,7 @@ ___
 1.まず以下のようなコマンドを実行してください。
 
 ```
-$ git clone git@github.com:RyotaHama07/robotsystem2021_devicedriver.git
+$ git clone https://github.com/RyotaHama07/robotsystem2021_devicedriver.git
 $ cd robotsystem2021_devicedriver/myled
 $ make  
 $ sudo insmod myled.ko  
