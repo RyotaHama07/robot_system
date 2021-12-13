@@ -28,26 +28,28 @@ static ssize_t led_write(struct file*filp, const char*buf, size_t count, loff_t*
 
         if(c == '0'){
                 for(i=100; i > 0; i--){
-                gpio_base[7] = 1 << 25;
-                msleep(i);
-                gpio_base[10] = 1 << 25;
-                msleep(i);
+                        gpio_base[7] = 1 << 25;
+                        msleep(i);
+                        gpio_base[10] = 1 << 25;
+                        msleep(i);
                 }
-        }else if(c == '1'){
+        }
+        else if(c == '1'){
                 for(i=0; i <= 10; i++){
-                gpio_base[7] = 1 << 25;
-                msleep(200);
-                gpio_base[10] = 1 << 25;
-                msleep(200);
-                gpio_base[7] = 1 << 25;
-                msleep(200);
-                gpio_base[10] = 1 << 25;
-                msleep(500);
-                gpio_base[7] = 1 << 25;
-                msleep(500);
-                gpio_base[10] = 1 << 25;
+                        gpio_base[7] = 1 << 25;
+                        msleep(200);
+                        gpio_base[10] = 1 << 25;
+                        msleep(200);
+                        gpio_base[7] = 1 << 25;
+                        msleep(200);
+                        gpio_base[10] = 1 << 25;
+                        msleep(500);
+                        gpio_base[7] = 1 << 25;
+                        msleep(500);
+                        gpio_base[10] = 1 << 25;
                 }
-        }else if(c == '2'){
+        }
+        else if(c == '2'){
                 gpio_base[7] = 1 << 25;
                 ssleep(1);
                 gpio_base[10] = 1 << 25;
@@ -135,10 +137,7 @@ static ssize_t led_write(struct file*filp, const char*buf, size_t count, loff_t*
                 gpio_base[7] = 1 << 25;
                 msleep(200);
                 gpio_base[10] = 1 << 25;
-
-
-
-}
+        }
         return 1;
 }
 
@@ -148,7 +147,7 @@ static ssize_t sushi_read(struct file* flip, char* buf, size_t count, loff_t* po
         char sushi[] = {'s','u','s','h','i',0x0A};
         if(copy_to_user(buf+size, (const char *)sushi, sizeof(sushi))){
                 printk( KERN_INFO "sushi : copy_to_user failed\n");
-        return -EFAULT;
+                return -EFAULT;
         }
 
         size += sizeof(sushi);
